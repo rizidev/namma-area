@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Check Your Location</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script>
+        function submitLocation() {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                const lat = position.coords.latitude;
+                const lng = position.coords.longitude;
+                const shopId = document.getElementById("shopId").value;
+
+                const form = document.getElementById("locationForm");
+                document.getElementById("lat").value = lat;
+                document.getElementById("lng").value = lng;
+                form.submit();
+            }, function(error) {
+                alert("Location access is required!");
+            });
+        }
+    </script>
+</head>
+<body class="login-body">
+<div class="login-container">
+    <h2>📍 Checking Your Location</h2>
+    <form id="locationForm" method="post" action="/user/checkRange">
+        <input type="hidden" name="userLat" id="lat" />
+        <input type="hidden" name="userLng" id="lng" />
+        <input type="text" name="shopId" id="shopId" placeholder="Enter Shop ID" required />
+        <button type="button" onclick="submitLocation()">Check</button>
+    </form>
+</div>
+</body>
+</html>

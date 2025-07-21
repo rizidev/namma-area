@@ -1,0 +1,46 @@
+# Maven build output
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# VS Code
+.vscode/
+
+# Environment & config
+*.env
+*.properties.local
+
+# Backup & temp files
+*.swp
+*~
+*.bak
+*.tmp
+
+# Spring Boot specific
+.spring-boot-devtools.properties
